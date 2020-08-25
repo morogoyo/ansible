@@ -1,0 +1,30 @@
+--- 
+
+- name: Test
+  hosts: compute-servers
+  tasks:
+    - name: who am I again
+      shell: |
+         whoami;
+         /usr/bin/uptime
+      register: result
+
+    - name: print debug message        
+      debug:
+        var: result
+        verbosity: 2
+
+    - name: update OS
+      become: yes
+      shell: |
+        yum update -y
+        yum upgrade -y
+
+    - name: install wget curl nmap
+      become: yes
+      shell: |
+        yum install wget curl nmap -y
+          
+
+
+       
