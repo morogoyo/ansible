@@ -1,0 +1,12 @@
+---
+all:
+  children:
+    servers:
+      children:
+        compute-servers:
+          hosts:   
+            morogoyo1c.mylabserver.com:
+            morogoyo3c.mylabserver.com:
+            morogoyo4c.mylabserver.com:
+      
+
