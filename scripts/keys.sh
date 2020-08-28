@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
-if [ ! -d "/home/ansible/.ssh/" ]
+
+
+if [ ! -d "/home/vagrant/.ssh/" ]
 then
-mkdir /home/ansible/.ssh/
-cat /home/ansible/keys/git_hub_id_rsa > /home/ansible/.ssh/git.id_rsa
-cat /home/ansible/keys/academy.id_rsa  > /home/ansible/.ssh/vagrant.id_rsa
+echo "Creating .ssh directory"
+mkdir /home/vagrant/.ssh/
 fi
+
+echo "moving git pem"
+cat  /home/vagrant/ansible/keys/git_hub_id_rsa > /home/vagrant/.ssh/git.id_rsa
+echo "moving academy pem"
+cat /home/vagrant/ansible/keys/academy.id_rsa  > /home/vagrant/.ssh/vagrant.id_rsa
+

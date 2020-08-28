@@ -6,12 +6,13 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.define "app" do |app|
-#   app.vagrant.plugins = ["vagrant-env", "vagrant-vbguest"]
+  app.vagrant.plugins = ["vagrant-env", "vagrant-vbguest"]
   app.vm.hostname = "app"
 
   # Create directory to sync with vagrant
-    app.vm.synced_folder ".","/home/ansible", create: true, group: "vagrant", owner: "vagrant",
+    app.vm.synced_folder ".","/home/vagrant/ansible", create: true, group: "vagrant", owner: "vagrant",
     id: "app"
+
 
   #provision centos box
     app.vm.provision "shell", path: "scripts/vagrantprovision.sh"
