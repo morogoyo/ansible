@@ -1,0 +1,7 @@
+*.rsa*
+*.log
+keys/*
+.git
+.vagrant
+.idea/
+.ssh/
