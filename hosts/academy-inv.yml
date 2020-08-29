@@ -9,5 +9,14 @@ all:
             morogoyo1c.mylabserver.com:
             morogoyo3c.mylabserver.com:
             morogoyo4c.mylabserver.com:
-      
+
+
+webserver:
+  hosts:
+    morogoyo2c.mylabserver.com:
+
+
+database_server:
+  hosts:
+   morogoyo3c.mylabserver.com:
 
