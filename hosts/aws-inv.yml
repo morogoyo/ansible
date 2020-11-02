@@ -1,0 +1,19 @@
+---
+all:
+  hosts:
+    jmm3.jmmdistributor.com:
+    jmm2.jmmdistributor.com: 
+  children:
+    prod:
+      hosts:
+        jmm3.jmmdistributor.com:
+    webservers:
+      hosts:
+        jmm3.jmmdistributor.com:
+        jmm2.jmmdistributor.com:       
+    practice:
+      hosts:
+        jmm2.jmmdistributor.com:
+
+      
+

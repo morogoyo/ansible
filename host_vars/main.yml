@@ -1,0 +1,7 @@
+#prod:
+#  jmm3.jmmdistributor.com:
+#    ansible_ssh_private_key_file=/home/vagrant/.ssh/aws_rene_id_rsa
+#
+#practice:
+#  jmm2.jmmdistributor.com:
+#    ansible_ssh_private_key_file=/home/vagrant/.ssh/jmm2_id_rsa
