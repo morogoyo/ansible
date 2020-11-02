@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name: yum update
+    become: true
+    shell: |
+      #!/bin/bash
+      yum update -y
+

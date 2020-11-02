@@ -1,0 +1,28 @@
+---
+###########################################################
+# This playbook will download and install webmin dependencies
+# on selected server currently webserver group
+###########################################################
+- hosts:
+    webserver
+  become: yes
+  tasks:
+    - name: add webmin rpm-key
+      when: ansible_os_family == 'RedHat'
+      rpm_key:
+        key: http://www.webmin.com/jcameron-key.asc
+        state: present
+
+    - name: add webmin yum repository
+      when: ansible_os_family == 'RedHat'
+      yum_repository:
+        baseurl: 'https://download.webmin.com/download/yum'
+        state: present
+        name: webmin
+        description: Webmin Yum Repo
+
+    - name: install webmin from yum repo
+      yum:
+        name: webmin
+        state: present
+

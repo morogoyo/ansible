@@ -3,3 +3,11 @@ keys/
 .ssh
 .vagrant/
 *.id_rsa
+*.rsa*
+*.log
+keys/*
+.git
+.vagrant
+.idea/
+.ssh/
+
