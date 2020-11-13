@@ -19,13 +19,14 @@
           - curl
           - vim 
           - net-tools
+          - htop
+          - letsencrypt
           state:
             present
 
-      - name: change host name
-        become: yes
-        shell: |
-          hostnamectl set-hostname "{{ server_host_name }}"
+      - name: change hostname
+        hostname:
+            name: "{{ server_host_name }}"
 
     
 

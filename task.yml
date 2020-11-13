@@ -1,7 +1,7 @@
 --- 
 
 - name: Test
-  hosts: compute-servers
+  hosts: webservers
   tasks:
     - name: who am I again
       shell: |

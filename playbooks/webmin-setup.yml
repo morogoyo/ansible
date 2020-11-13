@@ -4,7 +4,7 @@
 # on selected server currently webserver group
 ###########################################################
 - hosts:
-    webserver
+    webservers
   become: yes
   tasks:
     - name: add webmin rpm-key
@@ -16,13 +16,13 @@
     - name: add webmin yum repository
       when: ansible_os_family == 'RedHat'
       yum_repository:
-        baseurl: 'https://download.webmin.com/download/yum'
+        baseurl: 'https://download.webmin.com/download/yum/mirrorlist'
         state: present
         name: webmin
         description: Webmin Yum Repo
 
-    - name: install webmin from yum repo
-      yum:
-        name: webmin
-        state: present
+    # - name: install webmin from yum repo
+    #   yum:
+    #     name: webmin
+    #     state: present
 
